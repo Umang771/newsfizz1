@@ -27,7 +27,8 @@ const News = (props) => {
   const updateNews = async () => {
     props.setProgress(30);
     // FIX 1: Explicitly pass page=1 for the initial load instead of relying on the async state
-    let url = `https://gnews.io/api/v4/top-headlines?category=${props.category}&apikey=8a05801c4dc467682e6e34cd65bbd27f&page=1&pagesize=${props.pagesize}&lang=en&country=in`
+   // let url = `https://gnews.io/api/v4/top-headlines?category=${props.category}&apikey=8a05801c4dc467682e6e34cd65bbd27f&page=1&pagesize=${props.pagesize}&lang=en&country=in`
+  let url = `/gnews-api/api/v4/top-headlines?category=${props.category}&apikey=8a05801c4dc467682e6e34cd65bbd27f&page=1&pagesize=${props.pagesize}&lang=en&country=in`
     
     try {
       let data = await fetch(url)
@@ -61,7 +62,8 @@ const News = (props) => {
 
   const fetchData = async () => {
     // FIX 3: Use the current tracked state page variable explicitly
-    let url = `https://gnews.io/api/v4/top-headlines?category=${props.category}&apikey=8a05801c4dc467682e6e34cd65bbd27f&page=${page}&pagesize=${props.pagesize}&lang=en&country=in`
+    //let url = `https://gnews.io/api/v4/top-headlines?category=${props.category}&apikey=8a05801c4dc467682e6e34cd65bbd27f&page=${page}&pagesize=${props.pagesize}&lang=en&country=in`
+  let url = `/gnews-api/api/v4/top-headlines?category=${props.category}&apikey=8a05801c4dc467682e6e34cd65bbd27f&page=${page}&pagesize=${props.pagesize}&lang=en&country=in` 
     
     try {
       let data = await fetch(url)
